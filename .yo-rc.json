@@ -1,0 +1,38 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.ib.temankhatam",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "5.3.0",
+    "applicationType": "gateway",
+    "baseName": "temankhatam",
+    "packageName": "com.ib.temankhatam",
+    "packageFolder": "com/ib/temankhatam",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "N2FiMDRhN2ZkOTNmOGFjOGNkMDhmNGUwNzY1NjA2YWJkMDJlZmNhZTM3MGFjMjkxOGQ4MDJlZmMxOGViMjkyYmU2NTE4ZmNjYTZjMzBlMDQ4NjllYzRjMTUxMzI2NTJmZGQ5OGUzNWRiMzdjNzViZGMxZTE5Y2I5ZDYyMTg2MDQ=",
+    "clientFramework": "angularX",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": [
+      "en",
+      "id"
+    ]
+  }
+}
