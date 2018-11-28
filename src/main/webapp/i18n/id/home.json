@@ -1,19 +1,17 @@
 {
     "home": {
-        "title": "Selamat Datang, Java Hipster!",
-        "subtitle": "Ini adalah halaman utama anda",
+        "title": "Teman-Khatam.com",
+        "subtitle": "Menemanimu untuk mengkhatamkan Al-Quran",
         "logged": {
             "message": "Anda login sebagai \"{{username}}\"."
         },
-        "question": "Jika anda punya pertanyaan tentang JHipster:",
+        "question": "Jika Anda ingin memberi input atau saran, silahkan kontak:",
         "link": {
-            "homepage": "JHipster homepage",
-            "stackoverflow": "JHipster on Stack Overflow",
-            "bugtracker": "JHipster bug tracker",
-            "chat": "JHipster public chat room",
-            "follow": "follow @java_hipster on Twitter"
+            "wa": "Whatsapp",
+            "ig": "Instagram",
+            "fb": "Facebook"
         },
-        "like": "Jika anda menyukai JHipster, jangan lupa beri kami rating",
+        "like": "Jika anda menyukai teman-khatam.com, jangan lupa beri rating di",
         "github": "GitHub"
     }
 }

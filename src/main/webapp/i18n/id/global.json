@@ -49,13 +49,13 @@
         "messages": {
             "info": {
                 "authenticated": {
-                    "prefix": "Jika anda ingin ",
+                    "prefix": "Jika Anda sudah mendaftar, silahkan Anda ",
                     "link": "login",
-                    "suffix": ", anda bisa coba menggunakan akun yang sudah ada:<br/>- Administrator (login=\"admin\" and password=\"admin\") <br/>- User (login=\"user\" and password=\"user\")."
+                    "suffix": "."
                 },
                 "register": {
                     "noaccount": "Anda belum punya akun?",
-                    "link": "Buat akun baru anda disini"
+                    "link": "Silahkan Anda mendaftar disini"
                 }
             },
             "error": {
@@ -132,5 +132,5 @@
         "idexists": "{{ entityName }} yang baru tidak boleh menggunakan id yang sudah ada",
         "idnull": "Invalid ID"
     },
-    "footer": "Ini bagian footer aplikasi anda"
+    "footer": "&copy; 2018 teman-khatam.com"
 }
