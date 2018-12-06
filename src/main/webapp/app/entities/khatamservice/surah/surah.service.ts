@@ -11,7 +11,7 @@ type EntityArrayResponseType = HttpResponse<ISurah[]>;
 
 @Injectable({ providedIn: 'root' })
 export class SurahService {
-    private resourceUrl = SERVER_API_URL + 'khatamservice/api/surahs';
+    private resourceUrl = SERVER_API_URL + 'khatamservice/api/surahNames';
 
     constructor(private http: HttpClient) {}
 

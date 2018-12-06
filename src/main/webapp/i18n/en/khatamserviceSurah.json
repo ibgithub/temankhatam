@@ -13,15 +13,16 @@
             "detail": {
                 "title": "Surah"
             },
-            "surahNameArabic": "Surah Name Arabic",
-            "surahNamePego": "Surah Name Pego",
-            "transIndo": "Trans Indo",
-            "transEng": "Trans Eng",
+            "surahNo": "Surah Number",
+            "surahNameArabic": "Surah Name (Arabic)",
+            "surahNamePego": "Surah Name (Latin)",
+            "transIndo": "Translation",
+            "transEng": "Translation",
             "totalAyah": "Total Ayah",
             "makkiyahMadaniyah": "Makkiyah Madaniyah",
             "historyIndo": "History Indo",
-            "historyEng": "History Eng",
-            "desc": "Desc",
+            "historyEng": "History",
+            "desc": "Chronological Order",
             "ayah": "Ayah"
         }
     },
