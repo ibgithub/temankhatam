@@ -1,0 +1,71 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qoriTeam">
+            <h2><span jhiTranslate="temankhatamApp.khatamserviceQoriTeam.detail.title">Qori Team</span> {{qoriTeam.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceQoriTeam.teamTitle">Team Title</span></dt>
+                <dd>
+                    <span>{{qoriTeam.teamTitle}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceQoriTeam.member1">Member 1</span></dt>
+                <dd>
+                    <span>{{qoriTeam.member1}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceQoriTeam.member2">Member 2</span></dt>
+                <dd>
+                    <span>{{qoriTeam.member2}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceQoriTeam.member3">Member 3</span></dt>
+                <dd>
+                    <span>{{qoriTeam.member3}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceQoriTeam.member4">Member 4</span></dt>
+                <dd>
+                    <span>{{qoriTeam.member4}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceQoriTeam.member5">Member 5</span></dt>
+                <dd>
+                    <span>{{qoriTeam.member5}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceQoriTeam.member6">Member 6</span></dt>
+                <dd>
+                    <span>{{qoriTeam.member6}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceQoriTeam.member7">Member 7</span></dt>
+                <dd>
+                    <span>{{qoriTeam.member7}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceQoriTeam.member8">Member 8</span></dt>
+                <dd>
+                    <span>{{qoriTeam.member8}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceQoriTeam.member9">Member 9</span></dt>
+                <dd>
+                    <span>{{qoriTeam.member9}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceQoriTeam.member10">Member 10</span></dt>
+                <dd>
+                    <span>{{qoriTeam.member10}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceQoriTeam.desc">Desc</span></dt>
+                <dd>
+                    <span>{{qoriTeam.desc}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qori-team', qoriTeam.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

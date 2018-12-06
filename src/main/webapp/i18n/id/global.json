@@ -7,6 +7,11 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entities",
+                "khatamserviceSurah": "Surah",
+                "khatamserviceAyah": "Ayah",
+                "khatamserviceQori": "Qori",
+                "khatamserviceProgram": "Program",
+                "khatamserviceQoriTeam": "Qori Team",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
@@ -48,14 +53,29 @@
         },
         "messages": {
             "info": {
+                "fiture": {
+                    "list": "Fitur-fitur yang ada di Teman-Khatam.com:",
+                    "title": {
+                        "khatamprogram": "Program Khatam,",
+                        "equran": "Quran Online,",
+                        "translate": "Terjemahan,",
+                        "khattamSettings": "Khatam Settings,"
+                    },
+                    "desc": {
+                        "khatamprogram": "buat program baca Quran untuk mengkhatamkan sesuai kemampuan",
+                        "equran": "Anda bisa membaca dari Quran online atau mushaf biasa, kemudian update di Program Khatam Anda",
+                        "translate": "Anda bisa membaca terjemahan Quran diwaktu senggang",
+                        "khattamSettings": "Anda bisa setting misalnya sebelum main medsos di HP, Anda harus setor baca Quran dulu"
+                    }
+                },
                 "authenticated": {
-                    "prefix": "Jika Anda sudah mendaftar, silahkan Anda ",
+                    "prefix": "Jika Anda sudah mendaftar, silahkan ",
                     "link": "login",
                     "suffix": "."
                 },
                 "register": {
-                    "noaccount": "Anda belum punya akun?",
-                    "link": "Silahkan Anda mendaftar disini"
+                    "noaccount": "Jika belum, silahkan",
+                    "link": "mendaftar disini"
                 }
             },
             "error": {

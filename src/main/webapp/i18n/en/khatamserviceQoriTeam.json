@@ -1,0 +1,38 @@
+
+{
+    "temankhatamApp": {
+        "khatamserviceQoriTeam" : {
+            "home": {
+                "title": "Qori Teams",
+                "createLabel": "Create a new Qori Team",
+                "createOrEditLabel": "Create or edit a Qori Team"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Qori Team {{ id }}?"
+            },
+            "detail": {
+                "title": "Qori Team"
+            },
+            "teamTitle": "Team Title",
+            "member1": "Member 1",
+            "member2": "Member 2",
+            "member3": "Member 3",
+            "member4": "Member 4",
+            "member5": "Member 5",
+            "member6": "Member 6",
+            "member7": "Member 7",
+            "member8": "Member 8",
+            "member9": "Member 9",
+            "member10": "Member 10",
+            "desc": "Desc",
+            "qori": "Qori"
+        }
+    },
+    "khatamserviceApp": {
+        "khatamserviceQoriTeam" : {
+            "created": "A new Qori Team is created with identifier {{ param }}",
+            "updated": "A Qori Team is updated with identifier {{ param }}",
+            "deleted": "A Qori Team is deleted with identifier {{ param }}"
+        }
+    }
+}

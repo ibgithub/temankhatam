@@ -1,0 +1,77 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-ayah-heading" jhiTranslate="temankhatamApp.khatamserviceAyah.home.createOrEditLabel">Create or edit a Ayah</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!ayah.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="ayah.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceAyah.surahAyah" for="field_surahAyah">Surah Ayah</label>
+                    <input type="number" class="form-control" name="surahAyah" id="field_surahAyah"
+                        [(ngModel)]="ayah.surahAyah" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceAyah.ayahArabic" for="field_ayahArabic">Ayah Arabic</label>
+                    <input type="text" class="form-control" name="ayahArabic" id="field_ayahArabic"
+                        [(ngModel)]="ayah.ayahArabic" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceAyah.ayahPego" for="field_ayahPego">Ayah Pego</label>
+                    <input type="text" class="form-control" name="ayahPego" id="field_ayahPego"
+                        [(ngModel)]="ayah.ayahPego" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceAyah.transIndo" for="field_transIndo">Trans Indo</label>
+                    <input type="text" class="form-control" name="transIndo" id="field_transIndo"
+                        [(ngModel)]="ayah.transIndo" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceAyah.transEng" for="field_transEng">Trans Eng</label>
+                    <input type="text" class="form-control" name="transEng" id="field_transEng"
+                        [(ngModel)]="ayah.transEng" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceAyah.historyIndo" for="field_historyIndo">History Indo</label>
+                    <input type="text" class="form-control" name="historyIndo" id="field_historyIndo"
+                        [(ngModel)]="ayah.historyIndo" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceAyah.historyEng" for="field_historyEng">History Eng</label>
+                    <input type="text" class="form-control" name="historyEng" id="field_historyEng"
+                        [(ngModel)]="ayah.historyEng" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceAyah.desc" for="field_desc">Desc</label>
+                    <input type="text" class="form-control" name="desc" id="field_desc"
+                        [(ngModel)]="ayah.desc" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceAyah.surah" for="field_surah">Surah</label>
+                    <select class="form-control" id="field_surah" name="surah" [(ngModel)]="ayah.surah" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="surahOption.id === ayah.surah?.id ? ayah.surah : surahOption" *ngFor="let surahOption of surahs; trackBy: trackSurahById">{{surahOption.surahArabic}}</option>
+                    </select>
+                </div>
+                <div [hidden]="!(editForm.controls.qori?.dirty && editForm.controls.qori?.invalid)">
+                    <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.qori?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

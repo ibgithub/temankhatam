@@ -1,0 +1,99 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qori">
+            <h2><span jhiTranslate="temankhatamApp.khatamserviceQori.detail.title">Qori</span> {{qori.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceQori.fullName">Full Name</span></dt>
+                <dd>
+                    <span>{{qori.fullName}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceQori.userLogin">User Login</span></dt>
+                <dd>
+                    <span>{{qori.userLogin}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceQori.birthDate">Birth Date</span></dt>
+                <dd>
+                    <span>{{qori.birthDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceQori.gender">Gender</span></dt>
+                <dd>
+                    <span>{{qori.gender}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceQori.email">Email</span></dt>
+                <dd>
+                    <span>{{qori.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceQori.phoneNumber">Phone Number</span></dt>
+                <dd>
+                    <span>{{qori.phoneNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceQori.profession">Profession</span></dt>
+                <dd>
+                    <span>{{qori.profession}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceQori.address">Address</span></dt>
+                <dd>
+                    <span>{{qori.address}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceQori.motto">Motto</span></dt>
+                <dd>
+                    <span>{{qori.motto}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceQori.avatar">Avatar</span></dt>
+                <dd>
+                    <span>{{qori.avatar}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceQori.profileVisibility">Profile Visibility</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'temankhatamApp.ProfileVisibility.' + qori.profileVisibility}}">{{qori.profileVisibility}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceQori.isTeam">Is Team</span></dt>
+                <dd>
+                    <span>{{qori.isTeam}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceQori.desc">Desc</span></dt>
+                <dd>
+                    <span>{{qori.desc}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceQori.ayah">Ayah</span></dt>
+                <dd>
+                    <div *ngIf="qori.ayah">
+                        <a [routerLink]="['/ayah', qori.ayah?.id, 'view']">{{qori.ayah?.ayahArabic}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceQori.qoriTeam">Qori Team</span></dt>
+                <dd>
+                    <div *ngIf="qori.qoriTeam">
+                        <a [routerLink]="['/qori-team', qori.qoriTeam?.id, 'view']">{{qori.qoriTeam?.teamTitle}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceQori.program">Program</span></dt>
+                <dd>
+                    <div *ngIf="qori.program">
+                        <a [routerLink]="['/program', qori.program?.id, 'view']">{{qori.program?.programName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceQori.qoriMate">Qori Mate</span></dt>
+                <dd>
+                    <span *ngFor="let qoriMate of qori.qoriMates; let last = last">
+                        <a [routerLink]="['/qori', qoriMate?.id, 'view' ]">{{qoriMate.fullName}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qori', qori.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

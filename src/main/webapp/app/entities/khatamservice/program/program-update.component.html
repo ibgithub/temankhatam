@@ -1,0 +1,70 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-program-heading" jhiTranslate="temankhatamApp.khatamserviceProgram.home.createOrEditLabel">Create or edit a Program</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!program.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="program.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceProgram.programName" for="field_programName">Program Name</label>
+                    <input type="text" class="form-control" name="programName" id="field_programName"
+                        [(ngModel)]="program.programName" required/>
+                    <div [hidden]="!(editForm.controls.programName?.dirty && editForm.controls.programName?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.programName?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceProgram.readingLevel" for="field_readingLevel">Reading Level</label>
+                    <input type="text" class="form-control" name="readingLevel" id="field_readingLevel"
+                        [(ngModel)]="program.readingLevel" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceProgram.freeTime" for="field_freeTime">Free Time</label>
+                    <input type="text" class="form-control" name="freeTime" id="field_freeTime"
+                        [(ngModel)]="program.freeTime" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceProgram.totalMonths" for="field_totalMonths">Total Months</label>
+                    <input type="number" class="form-control" name="totalMonths" id="field_totalMonths"
+                        [(ngModel)]="program.totalMonths" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceProgram.totalWeeks" for="field_totalWeeks">Total Weeks</label>
+                    <input type="number" class="form-control" name="totalWeeks" id="field_totalWeeks"
+                        [(ngModel)]="program.totalWeeks" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceProgram.ayahPerWeek" for="field_ayahPerWeek">Ayah Per Week</label>
+                    <input type="number" class="form-control" name="ayahPerWeek" id="field_ayahPerWeek"
+                        [(ngModel)]="program.ayahPerWeek" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceProgram.isTeam" for="field_isTeam">Is Team</label>
+                    <input type="checkbox" class="form-control" name="isTeam" id="field_isTeam"
+                        [(ngModel)]="program.isTeam" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceProgram.desc" for="field_desc">Desc</label>
+                    <input type="text" class="form-control" name="desc" id="field_desc"
+                        [(ngModel)]="program.desc" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

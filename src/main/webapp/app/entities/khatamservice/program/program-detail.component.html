@@ -1,0 +1,55 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="program">
+            <h2><span jhiTranslate="temankhatamApp.khatamserviceProgram.detail.title">Program</span> {{program.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceProgram.programName">Program Name</span></dt>
+                <dd>
+                    <span>{{program.programName}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceProgram.readingLevel">Reading Level</span></dt>
+                <dd>
+                    <span>{{program.readingLevel}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceProgram.freeTime">Free Time</span></dt>
+                <dd>
+                    <span>{{program.freeTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceProgram.totalMonths">Total Months</span></dt>
+                <dd>
+                    <span>{{program.totalMonths}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceProgram.totalWeeks">Total Weeks</span></dt>
+                <dd>
+                    <span>{{program.totalWeeks}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceProgram.ayahPerWeek">Ayah Per Week</span></dt>
+                <dd>
+                    <span>{{program.ayahPerWeek}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceProgram.isTeam">Is Team</span></dt>
+                <dd>
+                    <span>{{program.isTeam}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceProgram.desc">Desc</span></dt>
+                <dd>
+                    <span>{{program.desc}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/program', program.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

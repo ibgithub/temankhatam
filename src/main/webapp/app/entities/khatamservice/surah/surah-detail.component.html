@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="surah">
+            <h2><span jhiTranslate="temankhatamApp.khatamserviceSurah.detail.title">Surah</span> {{surah.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceSurah.surahNameArabic">Surah Name Arabic</span></dt>
+                <dd>
+                    <span>{{surah.surahNameArabic}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceSurah.surahNamePego">Surah Name Pego</span></dt>
+                <dd>
+                    <span>{{surah.surahNamePego}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceSurah.transIndo">Trans Indo</span></dt>
+                <dd>
+                    <span>{{surah.transIndo}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceSurah.transEng">Trans Eng</span></dt>
+                <dd>
+                    <span>{{surah.transEng}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceSurah.totalAyah">Total Ayah</span></dt>
+                <dd>
+                    <span>{{surah.totalAyah}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceSurah.makkiyahMadaniyah">Makkiyah Madaniyah</span></dt>
+                <dd>
+                    <span>{{surah.makkiyahMadaniyah}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceSurah.historyIndo">History Indo</span></dt>
+                <dd>
+                    <span>{{surah.historyIndo}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceSurah.historyEng">History Eng</span></dt>
+                <dd>
+                    <span>{{surah.historyEng}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceSurah.desc">Desc</span></dt>
+                <dd>
+                    <span>{{surah.desc}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/surah', surah.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

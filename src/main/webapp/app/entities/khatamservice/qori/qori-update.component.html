@@ -1,0 +1,136 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-qori-heading" jhiTranslate="temankhatamApp.khatamserviceQori.home.createOrEditLabel">Create or edit a Qori</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!qori.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="qori.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceQori.fullName" for="field_fullName">Full Name</label>
+                    <input type="text" class="form-control" name="fullName" id="field_fullName"
+                        [(ngModel)]="qori.fullName" required/>
+                    <div [hidden]="!(editForm.controls.fullName?.dirty && editForm.controls.fullName?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.fullName?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceQori.userLogin" for="field_userLogin">User Login</label>
+                    <input type="text" class="form-control" name="userLogin" id="field_userLogin"
+                        [(ngModel)]="qori.userLogin" required/>
+                    <div [hidden]="!(editForm.controls.userLogin?.dirty && editForm.controls.userLogin?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.userLogin?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceQori.birthDate" for="field_birthDate">Birth Date</label>
+                    <div class="input-group">
+                        <input id="field_birthDate" type="text" class="form-control" name="birthDate" ngbDatepicker  #birthDateDp="ngbDatepicker" [(ngModel)]="qori.birthDate"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="birthDateDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceQori.gender" for="field_gender">Gender</label>
+                    <input type="text" class="form-control" name="gender" id="field_gender"
+                        [(ngModel)]="qori.gender" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceQori.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                        [(ngModel)]="qori.email" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceQori.phoneNumber" for="field_phoneNumber">Phone Number</label>
+                    <input type="text" class="form-control" name="phoneNumber" id="field_phoneNumber"
+                        [(ngModel)]="qori.phoneNumber" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceQori.profession" for="field_profession">Profession</label>
+                    <input type="text" class="form-control" name="profession" id="field_profession"
+                        [(ngModel)]="qori.profession" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceQori.address" for="field_address">Address</label>
+                    <input type="text" class="form-control" name="address" id="field_address"
+                        [(ngModel)]="qori.address" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceQori.motto" for="field_motto">Motto</label>
+                    <input type="text" class="form-control" name="motto" id="field_motto"
+                        [(ngModel)]="qori.motto" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceQori.avatar" for="field_avatar">Avatar</label>
+                    <input type="text" class="form-control" name="avatar" id="field_avatar"
+                        [(ngModel)]="qori.avatar" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceQori.profileVisibility" for="field_profileVisibility">Profile Visibility</label>
+                    <select class="form-control" name="profileVisibility" [(ngModel)]="qori.profileVisibility" id="field_profileVisibility" >
+                        <option value="VISIBLE">{{'temankhatamApp.ProfileVisibility.VISIBLE' | translate}}</option>
+                        <option value="ONLY_MY_TEAM">{{'temankhatamApp.ProfileVisibility.ONLY_MY_TEAM' | translate}}</option>
+                        <option value="INVISIBLE">{{'temankhatamApp.ProfileVisibility.INVISIBLE' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceQori.isTeam" for="field_isTeam">Is Team</label>
+                    <input type="checkbox" class="form-control" name="isTeam" id="field_isTeam"
+                        [(ngModel)]="qori.isTeam" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceQori.desc" for="field_desc">Desc</label>
+                    <input type="text" class="form-control" name="desc" id="field_desc"
+                        [(ngModel)]="qori.desc" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceQori.ayah" for="field_ayah">Ayah</label>
+                    <select class="form-control" id="field_ayah" name="ayah" [(ngModel)]="qori.ayah">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="ayahOption.id === qori.ayah?.id ? qori.ayah : ayahOption" *ngFor="let ayahOption of ayahs; trackBy: trackAyahById">{{ayahOption.ayahArabic}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceQori.qoriTeam" for="field_qoriTeam">Qori Team</label>
+                    <select class="form-control" id="field_qoriTeam" name="qoriTeam" [(ngModel)]="qori.qoriTeam">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="qoriTeamOption.id === qori.qoriTeam?.id ? qori.qoriTeam : qoriTeamOption" *ngFor="let qoriTeamOption of qoriteams; trackBy: trackQoriTeamById">{{qoriTeamOption.teamTitle}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceQori.program" for="field_program">Program</label>
+                    <select class="form-control" id="field_program" name="program" [(ngModel)]="qori.program">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="programOption.id === qori.program?.id ? qori.program : programOption" *ngFor="let programOption of programs; trackBy: trackProgramById">{{programOption.programName}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label jhiTranslate="temankhatamApp.khatamserviceQori.qoriMate" for="field_qoriMate">Qori Mate</label>
+                    <select class="form-control" id="field_qoriMate" multiple name="qoriMate" [(ngModel)]="qori.qoriMates">
+                        <option [ngValue]="getSelected(qori.qoriMates, qoriOption)" *ngFor="let qoriOption of qoris; trackBy: trackQoriById">{{qoriOption.fullName}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

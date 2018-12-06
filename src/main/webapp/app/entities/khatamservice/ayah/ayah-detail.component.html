@@ -1,0 +1,61 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="ayah">
+            <h2><span jhiTranslate="temankhatamApp.khatamserviceAyah.detail.title">Ayah</span> {{ayah.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceAyah.surahAyah">Surah Ayah</span></dt>
+                <dd>
+                    <span>{{ayah.surahAyah}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceAyah.ayahArabic">Ayah Arabic</span></dt>
+                <dd>
+                    <span>{{ayah.ayahArabic}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceAyah.ayahPego">Ayah Pego</span></dt>
+                <dd>
+                    <span>{{ayah.ayahPego}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceAyah.transIndo">Trans Indo</span></dt>
+                <dd>
+                    <span>{{ayah.transIndo}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceAyah.transEng">Trans Eng</span></dt>
+                <dd>
+                    <span>{{ayah.transEng}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceAyah.historyIndo">History Indo</span></dt>
+                <dd>
+                    <span>{{ayah.historyIndo}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceAyah.historyEng">History Eng</span></dt>
+                <dd>
+                    <span>{{ayah.historyEng}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceAyah.desc">Desc</span></dt>
+                <dd>
+                    <span>{{ayah.desc}}</span>
+                </dd>
+                <dt><span jhiTranslate="temankhatamApp.khatamserviceAyah.surah">Surah</span></dt>
+                <dd>
+                    <div *ngIf="ayah.surah">
+                        <a [routerLink]="['/surah', ayah.surah?.id, 'view']">{{ayah.surah?.surahArabic}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/ayah', ayah.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+
+{
+    "temankhatamApp": {
+        "khatamserviceQoriTeam" : {
+            "home": {
+                "title": "Qori Teams",
+                "createLabel": "Buat Qori Team baru",
+                "createOrEditLabel": "Buat atau edit Qori Team"
+            },
+            "delete": {
+                "question": "Apakah anda yakin ingin menghapus Qori Team {{ id }}?"
+            },
+            "detail": {
+                "title": "Qori Team"
+            },
+            "teamTitle": "Team Title",
+            "member1": "Member 1",
+            "member2": "Member 2",
+            "member3": "Member 3",
+            "member4": "Member 4",
+            "member5": "Member 5",
+            "member6": "Member 6",
+            "member7": "Member 7",
+            "member8": "Member 8",
+            "member9": "Member 9",
+            "member10": "Member 10",
+            "desc": "Desc",
+            "qori": "Qori"
+        }
+    },
+    "khatamserviceApp": {
+        "khatamserviceQoriTeam" : {
+            "created": "Qori Team dengan id {{ param }} telah dibuat",
+            "updated": "Qori Team dengan id {{ param }} telah diperbaharui",
+            "deleted": "Qori Team dengan id {{ param }} telah dihapus"
+        }
+    }
+}

@@ -1,0 +1,68 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="temankhatamApp.khatamserviceProgram.home.title">Programs</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-program" [routerLink]="['/program/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="temankhatamApp.khatamserviceProgram.home.createLabel">
+            Create new Program
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="programs">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceProgram.programName">Program Name</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceProgram.readingLevel">Reading Level</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceProgram.freeTime">Free Time</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceProgram.totalMonths">Total Months</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceProgram.totalWeeks">Total Weeks</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceProgram.ayahPerWeek">Ayah Per Week</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceProgram.isTeam">Is Team</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceProgram.desc">Desc</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let program of programs ;trackBy: trackId">
+                <td><a [routerLink]="['/program', program.id, 'view' ]">{{program.id}}</a></td>
+                <td>{{program.programName}}</td>
+                <td>{{program.readingLevel}}</td>
+                <td>{{program.freeTime}}</td>
+                <td>{{program.totalMonths}}</td>
+                <td>{{program.totalWeeks}}</td>
+                <td>{{program.ayahPerWeek}}</td>
+                <td>{{program.isTeam}}</td>
+                <td>{{program.desc}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/program', program.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/program', program.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'program/'+ program.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -5,13 +5,13 @@
         "logged": {
             "message": "You are logged in as user \"{{username}}\"."
         },
-        "question": "If you want to give input for this program, please contact:",
+        "question": "Suggestion and support for this program (especially for server rental), please contact:",
         "link": {
             "wa": "Whatsapp",
             "ig": "Instagram",
             "fb": "Facebook"
         },
-        "like": "If you like teman-khatam.com, don't forget to give us a star on",
+        "like": "If you like teman-khatam.com, don't forget to give the used framework a star on",
         "github": "GitHub"
     }
 }

@@ -1,0 +1,70 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="temankhatamApp.khatamserviceSurah.home.title">Surahs</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-surah" [routerLink]="['/surah/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="temankhatamApp.khatamserviceSurah.home.createLabel">
+            Create new Surah
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="surahs">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceSurah.surahNameArabic">Surah Name Arabic</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceSurah.surahNamePego">Surah Name Pego</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceSurah.transIndo">Trans Indo</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceSurah.transEng">Trans Eng</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceSurah.totalAyah">Total Ayah</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceSurah.makkiyahMadaniyah">Makkiyah Madaniyah</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceSurah.historyIndo">History Indo</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceSurah.historyEng">History Eng</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceSurah.desc">Desc</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let surah of surahs ;trackBy: trackId">
+                <td><a [routerLink]="['/surah', surah.id, 'view' ]">{{surah.id}}</a></td>
+                <td>{{surah.surahNameArabic}}</td>
+                <td>{{surah.surahNamePego}}</td>
+                <td>{{surah.transIndo}}</td>
+                <td>{{surah.transEng}}</td>
+                <td>{{surah.totalAyah}}</td>
+                <td>{{surah.makkiyahMadaniyah}}</td>
+                <td>{{surah.historyIndo}}</td>
+                <td>{{surah.historyEng}}</td>
+                <td>{{surah.desc}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/surah', surah.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/surah', surah.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'surah/'+ surah.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

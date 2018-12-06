@@ -1,0 +1,100 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-qori-team-heading" jhiTranslate="temankhatamApp.khatamserviceQoriTeam.home.createOrEditLabel">Create or edit a Qori Team</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!qoriTeam.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="qoriTeam.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceQoriTeam.teamTitle" for="field_teamTitle">Team Title</label>
+                    <input type="text" class="form-control" name="teamTitle" id="field_teamTitle"
+                        [(ngModel)]="qoriTeam.teamTitle" required/>
+                    <div [hidden]="!(editForm.controls.teamTitle?.dirty && editForm.controls.teamTitle?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.teamTitle?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceQoriTeam.member1" for="field_member1">Member 1</label>
+                    <input type="number" class="form-control" name="member1" id="field_member1"
+                        [(ngModel)]="qoriTeam.member1" required/>
+                    <div [hidden]="!(editForm.controls.member1?.dirty && editForm.controls.member1?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.member1?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.member1?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceQoriTeam.member2" for="field_member2">Member 2</label>
+                    <input type="number" class="form-control" name="member2" id="field_member2"
+                        [(ngModel)]="qoriTeam.member2" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceQoriTeam.member3" for="field_member3">Member 3</label>
+                    <input type="number" class="form-control" name="member3" id="field_member3"
+                        [(ngModel)]="qoriTeam.member3" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceQoriTeam.member4" for="field_member4">Member 4</label>
+                    <input type="number" class="form-control" name="member4" id="field_member4"
+                        [(ngModel)]="qoriTeam.member4" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceQoriTeam.member5" for="field_member5">Member 5</label>
+                    <input type="number" class="form-control" name="member5" id="field_member5"
+                        [(ngModel)]="qoriTeam.member5" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceQoriTeam.member6" for="field_member6">Member 6</label>
+                    <input type="number" class="form-control" name="member6" id="field_member6"
+                        [(ngModel)]="qoriTeam.member6" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceQoriTeam.member7" for="field_member7">Member 7</label>
+                    <input type="number" class="form-control" name="member7" id="field_member7"
+                        [(ngModel)]="qoriTeam.member7" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceQoriTeam.member8" for="field_member8">Member 8</label>
+                    <input type="number" class="form-control" name="member8" id="field_member8"
+                        [(ngModel)]="qoriTeam.member8" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceQoriTeam.member9" for="field_member9">Member 9</label>
+                    <input type="number" class="form-control" name="member9" id="field_member9"
+                        [(ngModel)]="qoriTeam.member9" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceQoriTeam.member10" for="field_member10">Member 10</label>
+                    <input type="number" class="form-control" name="member10" id="field_member10"
+                        [(ngModel)]="qoriTeam.member10" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceQoriTeam.desc" for="field_desc">Desc</label>
+                    <input type="text" class="form-control" name="desc" id="field_desc"
+                        [(ngModel)]="qoriTeam.desc" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

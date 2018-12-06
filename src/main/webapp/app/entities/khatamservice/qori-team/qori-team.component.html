@@ -1,0 +1,76 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="temankhatamApp.khatamserviceQoriTeam.home.title">Qori Teams</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-qori-team" [routerLink]="['/qori-team/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="temankhatamApp.khatamserviceQoriTeam.home.createLabel">
+            Create new Qori Team
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="qoriTeams">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceQoriTeam.teamTitle">Team Title</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceQoriTeam.member1">Member 1</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceQoriTeam.member2">Member 2</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceQoriTeam.member3">Member 3</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceQoriTeam.member4">Member 4</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceQoriTeam.member5">Member 5</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceQoriTeam.member6">Member 6</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceQoriTeam.member7">Member 7</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceQoriTeam.member8">Member 8</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceQoriTeam.member9">Member 9</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceQoriTeam.member10">Member 10</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceQoriTeam.desc">Desc</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let qoriTeam of qoriTeams ;trackBy: trackId">
+                <td><a [routerLink]="['/qori-team', qoriTeam.id, 'view' ]">{{qoriTeam.id}}</a></td>
+                <td>{{qoriTeam.teamTitle}}</td>
+                <td>{{qoriTeam.member1}}</td>
+                <td>{{qoriTeam.member2}}</td>
+                <td>{{qoriTeam.member3}}</td>
+                <td>{{qoriTeam.member4}}</td>
+                <td>{{qoriTeam.member5}}</td>
+                <td>{{qoriTeam.member6}}</td>
+                <td>{{qoriTeam.member7}}</td>
+                <td>{{qoriTeam.member8}}</td>
+                <td>{{qoriTeam.member9}}</td>
+                <td>{{qoriTeam.member10}}</td>
+                <td>{{qoriTeam.desc}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/qori-team', qoriTeam.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/qori-team', qoriTeam.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'qori-team/'+ qoriTeam.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

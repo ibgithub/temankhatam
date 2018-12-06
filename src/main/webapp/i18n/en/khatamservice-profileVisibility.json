@@ -1,0 +1,10 @@
+{
+    "temankhatamApp": {
+        "ProfileVisibility" : {
+            "null": "",
+            "VISIBLE": "VISIBLE",
+            "ONLY_MY_TEAM": "ONLY_MY_TEAM",
+            "INVISIBLE": "INVISIBLE"
+        }
+    }
+}

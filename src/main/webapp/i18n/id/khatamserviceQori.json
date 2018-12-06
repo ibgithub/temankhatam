@@ -1,0 +1,43 @@
+
+{
+    "temankhatamApp": {
+        "khatamserviceQori" : {
+            "home": {
+                "title": "Qoris",
+                "createLabel": "Buat Qori baru",
+                "createOrEditLabel": "Buat atau edit Qori"
+            },
+            "delete": {
+                "question": "Apakah anda yakin ingin menghapus Qori {{ id }}?"
+            },
+            "detail": {
+                "title": "Qori"
+            },
+            "fullName": "Full Name",
+            "userLogin": "User Login",
+            "birthDate": "Birth Date",
+            "gender": "Gender",
+            "email": "Email",
+            "phoneNumber": "Phone Number",
+            "profession": "Profession",
+            "address": "Address",
+            "motto": "Motto",
+            "avatar": "Avatar",
+            "profileVisibility": "Profile Visibility",
+            "isTeam": "Is Team",
+            "desc": "Desc",
+            "ayah": "Ayah",
+            "qoriTeam": "Qori Team",
+            "program": "Program",
+            "qoriMate": "Qori Mate",
+            "qoriFriend": "Qori Friend"
+        }
+    },
+    "khatamserviceApp": {
+        "khatamserviceQori" : {
+            "created": "Qori dengan id {{ param }} telah dibuat",
+            "updated": "Qori dengan id {{ param }} telah diperbaharui",
+            "deleted": "Qori dengan id {{ param }} telah dihapus"
+        }
+    }
+}

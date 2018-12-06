@@ -1,0 +1,35 @@
+
+{
+    "temankhatamApp": {
+        "khatamserviceAyah" : {
+            "home": {
+                "title": "Ayahs",
+                "createLabel": "Create a new Ayah",
+                "createOrEditLabel": "Create or edit a Ayah"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Ayah {{ id }}?"
+            },
+            "detail": {
+                "title": "Ayah"
+            },
+            "surahAyah": "Surah Ayah",
+            "ayahArabic": "Ayah Arabic",
+            "ayahPego": "Ayah Pego",
+            "transIndo": "Trans Indo",
+            "transEng": "Trans Eng",
+            "historyIndo": "History Indo",
+            "historyEng": "History Eng",
+            "desc": "Desc",
+            "surah": "Surah",
+            "qori": "Qori"
+        }
+    },
+    "khatamserviceApp": {
+        "khatamserviceAyah" : {
+            "created": "A new Ayah is created with identifier {{ param }}",
+            "updated": "A Ayah is updated with identifier {{ param }}",
+            "deleted": "A Ayah is deleted with identifier {{ param }}"
+        }
+    }
+}

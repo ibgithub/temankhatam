@@ -13,10 +13,30 @@
             </div>
 
             <div class="alert alert-warning" *ngSwitchCase="false">
-                <span jhiTranslate="global.messages.info.authenticated.prefix">If you want to </span>
-                <a class="alert-link" (click)="login()" jhiTranslate="global.messages.info.authenticated.link">sign in</a><span jhiTranslate="global.messages.info.authenticated.suffix">, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").</span>
+                <span jhiTranslate="global.messages.info.fiture.list">Fitur-fitur</span>
+                <ul>
+                    <li>
+                        <b><span jhiTranslate="global.messages.info.fiture.title.khatamprogram">khatamProgram</span></b>
+                        <span jhiTranslate="global.messages.info.fiture.desc.khatamprogram">khatamProgram</span>
+                    </li>
+                    <li>
+                        <b><span jhiTranslate="global.messages.info.fiture.title.equran">equran</span></b>
+                        <span jhiTranslate="global.messages.info.fiture.desc.equran">equran</span>
+                    </li>
+                    <li>
+                        <b><span jhiTranslate="global.messages.info.fiture.title.translate">translate</span></b>
+                        <span jhiTranslate="global.messages.info.fiture.desc.translate">translate</span>
+                    </li>
+                    <li>
+                        <b><span jhiTranslate="global.messages.info.fiture.title.khattamSettings">khattamSettings</span></b>
+                        <span jhiTranslate="global.messages.info.fiture.desc.khattamSettings">khattamSettings</span>
+                    </li>
+                </ul>
             </div>
             <div class="alert alert-warning" *ngSwitchCase="false">
+                <span jhiTranslate="global.messages.info.authenticated.prefix">If you want to </span>
+                <a class="alert-link" (click)="login()" jhiTranslate="global.messages.info.authenticated.link">sign in</a>
+                <br>
                 <span jhiTranslate="global.messages.info.register.noaccount">You don't have an account yet?</span>&nbsp;
                 <a class="alert-link" routerLink="register" jhiTranslate="global.messages.info.register.link">Register a new account</a>
             </div>

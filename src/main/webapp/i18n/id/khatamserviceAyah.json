@@ -1,0 +1,35 @@
+
+{
+    "temankhatamApp": {
+        "khatamserviceAyah" : {
+            "home": {
+                "title": "Ayahs",
+                "createLabel": "Buat Ayah baru",
+                "createOrEditLabel": "Buat atau edit Ayah"
+            },
+            "delete": {
+                "question": "Apakah anda yakin ingin menghapus Ayah {{ id }}?"
+            },
+            "detail": {
+                "title": "Ayah"
+            },
+            "surahAyah": "Surah Ayah",
+            "ayahArabic": "Ayah Arabic",
+            "ayahPego": "Ayah Pego",
+            "transIndo": "Trans Indo",
+            "transEng": "Trans Eng",
+            "historyIndo": "History Indo",
+            "historyEng": "History Eng",
+            "desc": "Desc",
+            "surah": "Surah",
+            "qori": "Qori"
+        }
+    },
+    "khatamserviceApp": {
+        "khatamserviceAyah" : {
+            "created": "Ayah dengan id {{ param }} telah dibuat",
+            "updated": "Ayah dengan id {{ param }} telah diperbaharui",
+            "deleted": "Ayah dengan id {{ param }} telah dihapus"
+        }
+    }
+}

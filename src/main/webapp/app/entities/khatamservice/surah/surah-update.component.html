@@ -1,0 +1,69 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-surah-heading" jhiTranslate="temankhatamApp.khatamserviceSurah.home.createOrEditLabel">Create or edit a Surah</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!surah.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="surah.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceSurah.surahNameArabic" for="field_surahNameArabic">Surah Name Arabic</label>
+                    <input type="text" class="form-control" name="surahNameArabic" id="field_surahNameArabic"
+                        [(ngModel)]="surah.surahNameArabic" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceSurah.surahNamePego" for="field_surahNamePego">Surah Name Pego</label>
+                    <input type="text" class="form-control" name="surahNamePego" id="field_surahNamePego"
+                        [(ngModel)]="surah.surahNamePego" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceSurah.transIndo" for="field_transIndo">Trans Indo</label>
+                    <input type="text" class="form-control" name="transIndo" id="field_transIndo"
+                        [(ngModel)]="surah.transIndo" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceSurah.transEng" for="field_transEng">Trans Eng</label>
+                    <input type="text" class="form-control" name="transEng" id="field_transEng"
+                        [(ngModel)]="surah.transEng" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceSurah.totalAyah" for="field_totalAyah">Total Ayah</label>
+                    <input type="number" class="form-control" name="totalAyah" id="field_totalAyah"
+                        [(ngModel)]="surah.totalAyah" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceSurah.makkiyahMadaniyah" for="field_makkiyahMadaniyah">Makkiyah Madaniyah</label>
+                    <input type="text" class="form-control" name="makkiyahMadaniyah" id="field_makkiyahMadaniyah"
+                        [(ngModel)]="surah.makkiyahMadaniyah" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceSurah.historyIndo" for="field_historyIndo">History Indo</label>
+                    <input type="text" class="form-control" name="historyIndo" id="field_historyIndo"
+                        [(ngModel)]="surah.historyIndo" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceSurah.historyEng" for="field_historyEng">History Eng</label>
+                    <input type="text" class="form-control" name="historyEng" id="field_historyEng"
+                        [(ngModel)]="surah.historyEng" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="temankhatamApp.khatamserviceSurah.desc" for="field_desc">Desc</label>
+                    <input type="text" class="form-control" name="desc" id="field_desc"
+                        [(ngModel)]="surah.desc" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

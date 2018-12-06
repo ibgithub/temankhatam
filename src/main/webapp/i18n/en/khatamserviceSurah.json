@@ -1,0 +1,35 @@
+
+{
+    "temankhatamApp": {
+        "khatamserviceSurah" : {
+            "home": {
+                "title": "Surahs",
+                "createLabel": "Create a new Surah",
+                "createOrEditLabel": "Create or edit a Surah"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Surah {{ id }}?"
+            },
+            "detail": {
+                "title": "Surah"
+            },
+            "surahNameArabic": "Surah Name Arabic",
+            "surahNamePego": "Surah Name Pego",
+            "transIndo": "Trans Indo",
+            "transEng": "Trans Eng",
+            "totalAyah": "Total Ayah",
+            "makkiyahMadaniyah": "Makkiyah Madaniyah",
+            "historyIndo": "History Indo",
+            "historyEng": "History Eng",
+            "desc": "Desc",
+            "ayah": "Ayah"
+        }
+    },
+    "khatamserviceApp": {
+        "khatamserviceSurah" : {
+            "created": "A new Surah is created with identifier {{ param }}",
+            "updated": "A Surah is updated with identifier {{ param }}",
+            "deleted": "A Surah is deleted with identifier {{ param }}"
+        }
+    }
+}

@@ -5,13 +5,13 @@
         "logged": {
             "message": "Anda login sebagai \"{{username}}\"."
         },
-        "question": "Jika Anda ingin memberi input atau saran, silahkan kontak:",
+        "question": "Saran dan dukungan (terutama untuk sewa server) silahkan kontak:",
         "link": {
             "wa": "Whatsapp",
             "ig": "Instagram",
             "fb": "Facebook"
         },
-        "like": "Jika anda menyukai teman-khatam.com, jangan lupa beri rating di",
+        "like": "Jika anda menyukai teman-khatam.com, jangan lupa beri rating framework yang digunakan di",
         "github": "GitHub"
     }
 }

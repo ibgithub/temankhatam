@@ -1,0 +1,74 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="temankhatamApp.khatamserviceAyah.home.title">Ayahs</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-ayah" [routerLink]="['/ayah/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="temankhatamApp.khatamserviceAyah.home.createLabel">
+            Create new Ayah
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="ayahs">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceAyah.surahAyah">Surah Ayah</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceAyah.ayahArabic">Ayah Arabic</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceAyah.ayahPego">Ayah Pego</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceAyah.transIndo">Trans Indo</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceAyah.transEng">Trans Eng</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceAyah.historyIndo">History Indo</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceAyah.historyEng">History Eng</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceAyah.desc">Desc</span></th>
+            <th><span jhiTranslate="temankhatamApp.khatamserviceAyah.surah">Surah</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let ayah of ayahs ;trackBy: trackId">
+                <td><a [routerLink]="['/ayah', ayah.id, 'view' ]">{{ayah.id}}</a></td>
+                <td>{{ayah.surahAyah}}</td>
+                <td>{{ayah.ayahArabic}}</td>
+                <td>{{ayah.ayahPego}}</td>
+                <td>{{ayah.transIndo}}</td>
+                <td>{{ayah.transEng}}</td>
+                <td>{{ayah.historyIndo}}</td>
+                <td>{{ayah.historyEng}}</td>
+                <td>{{ayah.desc}}</td>
+                <td>
+                    <div *ngIf="ayah.surah">
+                        <a [routerLink]="['../surah', ayah.surah?.id, 'view' ]" >{{ayah.surah?.surahArabic}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/ayah', ayah.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/ayah', ayah.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'ayah/'+ ayah.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

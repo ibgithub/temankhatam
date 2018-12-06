@@ -7,6 +7,11 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entities",
+                "khatamserviceSurah": "Surah",
+                "khatamserviceAyah": "Ayah",
+                "khatamserviceQori": "Qori",
+                "khatamserviceProgram": "Program",
+                "khatamserviceQoriTeam": "Qori Team",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
@@ -48,6 +53,21 @@
         },
         "messages": {
             "info": {
+                "fiture": {
+                    "list": "Fitures in Teman-Khatam.com:",
+                    "title": {
+                        "khatamprogram": "Khatam Program,",
+                        "equran": "Online Quran,",
+                        "translate": "Translation,",
+                        "khattamSettings": "Khatam Settings,"
+                    },
+                    "desc": {
+                        "khatamprogram": "Make your own program to read through Quran according to your ability",
+                        "equran": "You can read Online Quran or regular mushaf, and then update to your Khatam Program",
+                        "translate": "You can read Quran translation in your free time",
+                        "khattamSettings": "You can setting for example you must read Quran before play your social media in your phone"
+                    }
+                },
                 "authenticated": {
                     "prefix": "If you already register, you can",
                     "link": "sign in",
