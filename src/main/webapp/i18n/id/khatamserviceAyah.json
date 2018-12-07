@@ -13,11 +13,11 @@
             "detail": {
                 "title": "Ayah"
             },
-            "surahAyah": "Surah Ayah",
-            "ayahArabic": "Ayah Arabic",
-            "ayahPego": "Ayah Pego",
-            "transIndo": "Trans Indo",
-            "transEng": "Trans Eng",
+            "surahAyah": "No Ayah",
+            "ayahArabic": "Ayah",
+            "ayahPego": "Ayah Latin",
+            "transIndo": "Terjemahan",
+            "transEng": "Translation",
             "historyIndo": "History Indo",
             "historyEng": "History Eng",
             "desc": "Desc",

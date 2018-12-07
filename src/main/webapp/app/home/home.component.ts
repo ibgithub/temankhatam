@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
         private jhiAlertService: JhiAlertService,
         private eventManager: JhiEventManager) {}
 
-        loadAll() {
+    loadAll() {
         this.surahService.query().subscribe(
             (res: HttpResponse<ISurah[]>) => {
                 this.surahs = res.body;

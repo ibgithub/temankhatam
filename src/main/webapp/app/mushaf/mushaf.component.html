@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-md-12">
+      <div class="table-responsive" *ngIf="ayahs">
+          <table class="table table-striped">
+              <thead>
+              <tr>
+                  <th width="10%"><span jhiTranslate="temankhatamApp.khatamserviceAyah.surahAyah">surahAyah</span></th>
+                  <th width="45%"><span jhiTranslate="temankhatamApp.khatamserviceAyah.ayahArabic">ayahArabic</span></th>
+                  <th width="45%"><span jhiTranslate="temankhatamApp.khatamserviceAyah.transIndo">transIndo</span></th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let ayah of ayahs ;trackBy: trackId">
+                  <td>{{ayah.surahAyah}}</td>
+                  <td style="font-size:22px">{{ayah.ayahArabic}}</td>
+                  <td>{{ayah.transIndo}}</td>
+              </tr>
+              </tbody>
+          </table>
+      </div>
+      <div *ngIf="ayahs">
+          <div class="row justify-content-center">
+              <jhi-item-count [page]="page" [total]="queryCount" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+          </div>
+          <div class="row justify-content-center">
+              <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+          </div>
+      </div>
+  </div>
+</div>

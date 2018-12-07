@@ -73,7 +73,7 @@
                 <tbody>
                 <tr *ngFor="let surah of surahs ;trackBy: trackId">
                     <td>{{surah.id}}</td>
-                    <td><a [routerLink]="['/surah', surah.id, 'view' ]">{{surah.surahNameArabic}}</a></td>
+                    <td style="font-size:22px"><a [routerLink]="['/mushaf', surah.id, 10, 0 ]">{{surah.surahNameArabic}}</a></td>
                     <td>{{surah.surahNamePego}}</td>
                     <td>{{surah.transIndo}}</td>
                     <!--td>{{surah.totalAyah}}</td-->
