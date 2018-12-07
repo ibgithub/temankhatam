@@ -11,8 +11,8 @@ type EntityArrayResponseType = HttpResponse<ISurah[]>;
 
 @Injectable({ providedIn: 'root' })
 export class SurahService {
-    private resourceUrl = SERVER_API_URL + 'khatamservice/api/surahNames';
-
+    private resourceUrl = SERVER_API_URL + 'khatamservice/api/surahs';
+    private resourceUrlNames = SERVER_API_URL + 'khatamservice/api/surahNames';
     constructor(private http: HttpClient) {}
 
     create(surah: ISurah): Observable<EntityResponseType> {
@@ -29,7 +29,7 @@ export class SurahService {
 
     query(req?: any): Observable<EntityArrayResponseType> {
         const options = createRequestOption(req);
-        return this.http.get<ISurah[]>(this.resourceUrl, { params: options, observe: 'response' });
+        return this.http.get<ISurah[]>(this.resourceUrlNames, { params: options, observe: 'response' });
     }
 
     delete(id: number): Observable<HttpResponse<any>> {

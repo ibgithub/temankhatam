@@ -12,6 +12,7 @@ type EntityArrayResponseType = HttpResponse<IAyah[]>;
 @Injectable({ providedIn: 'root' })
 export class AyahService {
     private resourceUrl = SERVER_API_URL + 'khatamservice/api/ayahs';
+    private resourceUrlBySurahId = SERVER_API_URL + 'khatamservice/api/ayahsBySurahIdLimitOffset';
 
     constructor(private http: HttpClient) {}
 
@@ -30,6 +31,10 @@ export class AyahService {
     query(req?: any): Observable<EntityArrayResponseType> {
         const options = createRequestOption(req);
         return this.http.get<IAyah[]>(this.resourceUrl, { params: options, observe: 'response' });
+    }
+
+    queryBySurahId(surahId: number, limit: number, offset: number): Observable<EntityArrayResponseType> {
+        return this.http.get<IAyah[]>(`${this.resourceUrlBySurahId}?surahId=${surahId}&limit=${limit}&offset=${offset}`, { observe: 'response' });
     }
 
     delete(id: number): Observable<HttpResponse<any>> {
