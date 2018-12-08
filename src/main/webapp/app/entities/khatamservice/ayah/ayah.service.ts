@@ -13,6 +13,7 @@ type EntityArrayResponseType = HttpResponse<IAyah[]>;
 export class AyahService {
     private resourceUrl = SERVER_API_URL + 'khatamservice/api/ayahs';
     private resourceUrlBySurahId = SERVER_API_URL + 'khatamservice/api/ayahsBySurahIdLimitOffset';
+    private resourceUrlPagination = SERVER_API_URL + 'khatamservice/api/surahPagination';
 
     constructor(private http: HttpClient) {}
 
@@ -35,6 +36,10 @@ export class AyahService {
 
     queryBySurahId(surahId: number, limit: number, offset: number): Observable<EntityArrayResponseType> {
         return this.http.get<IAyah[]>(`${this.resourceUrlBySurahId}?surahId=${surahId}&limit=${limit}&offset=${offset}`, { observe: 'response' });
+    }
+
+    queryPagination(surahId: number, limit: number, offset: number): Observable<HttpResponse<String[]>> {
+        return this.http.get<String[]>(`${this.resourceUrlPagination}?surahId=${surahId}&limit=${limit}&offset=${offset}`, { observe: 'response' });
     }
 
     delete(id: number): Observable<HttpResponse<any>> {

@@ -1,11 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { AyahService } from '../entities/khatamservice/ayah/ayah.service';
 import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
 
 import { ITEMS_PER_PAGE } from 'app/shared';
 import { IAyah } from 'app/shared/model/khatamservice/ayah.model';
+import { ISurah } from 'app/shared/model/khatamservice/surah.model';
 
 @Component({
   selector: 'jhi-mushaf',
@@ -19,16 +20,17 @@ export class MushafComponent implements OnInit {
   error: any;
   success: any;
   routeData: any;
-  totalItems: any;
-  queryCount: any;
   itemsPerPage: any;
-  page: any;
-  predicate: any;
-  previousPage: any;
-  reverse: any;
   surahId: any;
   limit: any;
   offset: any;
+  surahName: any;
+
+  strs: String[];
+  surahIdBefore: any;
+  surahIdAfter: any;
+  offsetBefore: any;
+  offsetAfter: any;
 
   constructor(
     private ayahService: AyahService,
@@ -37,26 +39,24 @@ export class MushafComponent implements OnInit {
     private router: Router
     ) {
     this.itemsPerPage = ITEMS_PER_PAGE;
-    this.surahId = this.activatedRoute.snapshot.params['surahId'];
-    this.limit = this.activatedRoute.snapshot.params['limit'];
-    this.offset = this.activatedRoute.snapshot.params['offset'];
-    this.routeData = this.activatedRoute.data.subscribe(data => {
-      this.page = data['pagingParams'].page;
-      this.previousPage = data['pagingParams'].page;
-      this.reverse = data['pagingParams'].ascending;
-      this.predicate = data['pagingParams'].predicate;
-    });
   }
 
   ngOnInit() {
-    this.loadAll();
+    this.activatedRoute.paramMap.subscribe((routeParams: ParamMap) => {
+      this.myInit(routeParams);
+      this.loadAll();
+    });
+  }
+
+  myInit(routeParams: ParamMap) {
+    console.log('myInit() triggered');
+    this.surahId = +(routeParams.get('surahId'));
+    this.limit = +(routeParams.get('limit'));
+    this.offset = +(routeParams.get('offset'));
   }
 
   loadPage(page: number) {
-    if (page !== this.previousPage) {
-        this.previousPage = page;
-        this.transition();
-    }
+
   }
 
   loadAll() {
@@ -68,28 +68,30 @@ export class MushafComponent implements OnInit {
         );
   }
 
-  sort() {
-    const result = [this.predicate + ',' + (this.reverse ? 'asc' : 'desc')];
-    if (this.predicate !== 'id') {
-        result.push('id');
-    }
-    return result;
-  }
-
   transition() {
-    this.router.navigate(['/mushaf'], {
-        queryParams: {
-            page: this.page,
-            sort: this.predicate + ',' + (this.reverse ? 'asc' : 'desc')
-        }
-    });
     this.loadAll();
   }
 
   private onSuccess(data, headers) {
-    this.totalItems = headers.get('X-Total-Count');
-    this.queryCount = this.totalItems;
     this.ayahs = data;
+    this.surahName = (<IAyah> this.ayahs[0]).surah.transIndo + ' - ' + (<IAyah> this.ayahs[0]).surah.surahNameArabic;
+    this.ayahService
+        .queryPagination(this.surahId, this.limit, this.offset)
+        .subscribe(
+            (res: HttpResponse<String[]>) => this.onSuccessString(res.body, res.headers),
+            (res: HttpResponse<any>) => this.onError(res.body)
+        );
+  }
+
+  private onSuccessString(data, headers) {
+    this.strs = data;
+    const before = this.strs[0].split(',');
+    this.surahIdBefore = before[0];
+    this.offsetBefore = before[1];
+
+    const after = this.strs[1].split(',');
+    this.surahIdAfter = after[0];
+    this.offsetAfter = after[1];
   }
 
   private onError(errorMessage: string) {
